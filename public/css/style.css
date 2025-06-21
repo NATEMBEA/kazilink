@@ -1,0 +1,113 @@
+:root {
+    --primary: #3498db;
+    --secondary: #2c3e50;
+    --accent: #f39c12;
+    --light: #ecf0f1;
+    --dark: #2c3e50;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.navbar {
+    background-color: var(--secondary);
+}
+
+.worker-card {
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    height: 100%;
+    background: white;
+}
+
+.worker-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.worker-img {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.skill-badge {
+    background-color: var(--primary);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.btn-whatsapp {
+    background-color: #25D366;
+    border-color: #25D366;
+    color: white;
+    font-weight: 600;
+}
+
+.btn-whatsapp:hover {
+    background-color: #128C7E;
+    border-color: #128C7E;
+    color: white;
+}
+
+.search-box {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    margin-top: -50px;
+    position: relative;
+    z-index: 10;
+}
+
+.section-title {
+    position: relative;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    color: var(--secondary);
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: var(--accent);
+    border-radius: 2px;
+}
+
+.status-badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.status-pending {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.status-approved {
+    background-color: #28a745;
+    color: white;
+}
+
+.form-container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    padding: 30px;
+    margin: 30px 0;
+}

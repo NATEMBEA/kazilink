@@ -1,0 +1,27 @@
+# Enable rewrite engine
+RewriteEngine On
+
+# Prevent directory listing
+Options -Indexes
+
+# Security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Content-Security-Policy "default-src 'self';"
+</IfModule>
+
+# Prevent access to sensitive files
+<FilesMatch "\.(env|log|htaccess)$">
+    Require all denied
+</FilesMatch>
+
+# Block direct access to /public directory
+RewriteCond %{THE_REQUEST} \s/public [NC]
+RewriteRule ^ - [F,L]
+
+# Redirect to public directory excluding /admin
+RewriteCond %{REQUEST_URI} !^/admin [NC]
+RewriteCond %{REQUEST_URI} !^/public [NC]
+RewriteRule ^(.*)$ public/$1 [L]
